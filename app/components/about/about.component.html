@@ -1,0 +1,21 @@
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Hello, world!</h1>
+        <p>About Component ...</p>
+        <p>
+            <a class="btn btn-primary btn-lg">Learn more</a>
+        </p>
+    </div>
+</div>
+
+<div class="row" *ngIf="users">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" 
+    *ngFor="let user of users" [routerLink]="['/about',user.username]" >
+        <div class="profile-card">
+            <img [src]="user.avatar" class="img-responsive img-circle">
+                <h2>{{ user.name }}</h2>
+                <p><a href="https://twitter.com/{{user.username}}">{{ user.username }}</a></p>
+        </div>
+    </div>
+</div>
